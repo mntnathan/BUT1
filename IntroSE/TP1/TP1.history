@@ -1,0 +1,152 @@
+    1  pwd
+    2  ls ..
+    3  ls .. | wc
+    4  man man
+    5  man mkdir
+    6  man touch
+    7  man pwd
+    8  ls
+    9  cd BUT1
+   10  cd ..
+   11  cd 
+   12  cd BUT1
+   13  ls
+   14  mkdir BUT1
+   15  cd BUT1/
+   16  mkdir IntroSe
+   17  cd IntroSe/
+   18  cd ..
+   19  rmdir IntroSe
+   20  mkdir IntroSE
+   21  cd IntroSE/
+   22  mkdir TP1
+   23  ls
+   24  cd
+   25  cd BUT1/
+   26  tree BUT1
+   27  cd
+   28  tree BUT1
+   29  cd                       
+   30  man mkdir
+   31  cd BUT1/IntroSE/TP1/
+   32  cd
+   33  cd BUT1/IntroSE/TP1/
+   34  cd
+   35  ls ..
+   36  cd BUT1/
+   37  ls
+   38  cd IntroSE/
+   39  ls
+   40  cd TP1/
+   41  ls
+   42  c
+   43  c         
+   44  whereis ls
+   45  whereis mkdir
+   46  history
+   47  46
+   48  history
+   49  tree BUT1
+   50  cd
+   51  tree BUT1
+   52  history
+   53  cd BUT1/IntroSE/TP1/
+   54  mkdir -p EX7/dep1/isabelle/journal/fic1
+   55  ls
+   56  cd EX7/
+   57  mkdir -p dep2/lucie/fic1
+   58  cd dep1
+   59  cd isabelle/
+   60  mkdir -p travaux/fic1
+   61  cd journal/
+   62  mkdir fic2
+   63  ls
+   64  cd ..
+   65  ls
+   66  cd ..
+   67  ls
+   68  mkdir -p anne/divers/fic1
+   69  cd anne/
+   70  mkdir journal/fic1
+   71  mkdir -p journal/fic1
+   72  ls
+   73  cd journal/
+   74  ls
+   75  mkdir fic2
+   76  cd ..
+   77  ls
+   78  cd ..
+   79  ls
+   80  cd ..
+   81  cd dep2
+   82  ls
+   83  cd lucie
+   84  ls
+   85  mkdir fic2
+   86  cd ..
+   87  cd..
+   88  cd ..
+   89  tree EX7
+   90  cd dep2
+   91  cd EX7/dep2
+   92  mkdir vincent
+   93  cd ..
+   94  tree EX7
+   95  cd EX7/dep1/anne/divers/
+   96  ls
+   97  rmdir  fic1/
+   98  touch fic1
+   99  cd
+  100  cd EX7/dep1/anne/divers/
+  101  cd BUT1/IntroSE/TP1/
+  102  cd EX7/dep1/anne/divers/
+  103  ls
+  104  cd ..
+  105  ls
+  106  cd journal/
+  107  ls
+  108  rmdir fic1
+  109  touch fic1
+  110  rmdir fic2
+  111  touch fic2
+  112  ls
+  113  cd ..
+  114  ls
+  115  cd ..
+  116  ls
+  117  cd isabelle/
+  118  ls
+  119  cd journal/
+  120  ls
+  121  rmdir fic1
+  122  rmdir fic2
+  123  touch fic1
+  124  touch fic2
+  125  ls
+  126  cd ..
+  127  ls
+  128  cd travaux
+  129  rmdir fic1
+  130  touch fic1
+  131  ls
+  132  cd ..
+  133  ls
+  134  cd ..
+  135  ls
+  136  cd dep 2
+  137  cd dep2
+  138  cd lucie 
+  139  ls
+  140  rmdir fic1
+  141  rmdir fic2
+  142  touch fic1
+  143  touch fic2
+  144  cd ..
+  145  ls
+  146  cd lucie
+  147  ls
+  148  cd ..
+  149   cd ..
+  150  tree EX7/
+  151  history >tp1.history
+  152  history > TP1.history
