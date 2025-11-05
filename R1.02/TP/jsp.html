@@ -1,0 +1,106 @@
+<section>
+  <h2>Formulaire d'inscription</h2>
+
+  <form method="post" action="traitement.php" enctype="multipart/form-data">
+    
+    <fieldset>
+      <legend>Informations personnelles</legend>
+
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" placeholder="Dupont" ><br><br>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" placeholder="Jean" ><br><br>
+
+      <label for="naissance">Date de naissance :</label>
+      <input type="date" id="naissance" name="naissance"><br><br>
+
+      <label for="email">Adresse e-mail :</label>
+      <input type="email" id="email" name="email" placeholder="exemple@mail.com"><br><br>
+
+      <label for="site">Votre site web :</label>
+      <input type="url" id="site" name="site" placeholder="https://..."><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Préférences</legend>
+
+      <p>Genre :</p>
+      <input type="radio" id="homme" name="genre" value="Homme">
+      <label for="homme">Homme</label>
+      <input type="radio" id="femme" name="genre" value="Femme">
+      <label for="femme">Femme</label>
+      <br><br>
+
+      <label for="pays">Pays :</label>
+      <select id="pays" name="pays">
+        <option value="france">France</option>
+        <option value="suisse">Suisse</option>
+        <option value="canada">Canada</option>
+      </select>
+      <br><br>
+
+      <label for="plats">Vos plats préférés :</label><br>
+      <select id="plats" name="plats[]" multiple size="4">
+        <option>Frites mayonnaise</option>
+        <option>Salade niçoise</option>
+        <option>Turbo et ses légumes</option>
+        <option>Tarte aux prunes</option>
+      </select>
+      <br><br>
+
+      <label for="commentaire">Décrivez vos goûts :</label><br>
+      <textarea id="commentaire" name="commentaire" rows="4" cols="40"></textarea>
+      <br><br>
+
+      <label for="photo">Votre photo :</label>
+      <input type="file" id="photo" name="photo" accept="image/png, image/jpeg"><br><br>
+      
+      <label for="'color">couleur</label>
+      <input type="color">
+
+      <input type="month">
+      <input type="datetime-local">
+      <input type="search" required>
+
+      <input type="reset" value="Effacer">
+      <input type="submit" value="Envoyer">
+    </fieldset>
+
+  </form>
+</section>
+
+<section>
+  <h2>Emploi du temps - Groupe A et B</h2>
+  <table border="1">
+    <caption>Planning hebdomadaire</caption>
+    <thead>
+      <tr>
+        <th>Jour</th>
+        <th colspan="2">Matin</th>
+        <th colspan="2">Après-midi</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Groupe A</th><th>Groupe B</th>
+        <th>Groupe A</th><th>Groupe B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Lundi</th>
+        <td rowspan="2">HTML</td><td>CSS</td>
+        <td colspan="2">Projet Web</td>
+      </tr>
+      <tr>
+        <th>Mardi</th>
+        <td>JavaScript</td><td>Python</td><td>Base de données</td>
+      </tr>
+      <tr>
+        <th>Mercredi</th>
+        <td colspan="4">Repos 😎</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
