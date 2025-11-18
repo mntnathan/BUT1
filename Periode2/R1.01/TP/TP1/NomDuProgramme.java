@@ -32,7 +32,26 @@ public class NomDuProgramme {
         int fatigue = 0;
         boolean fini = false;
 
+        boolean tempete = false;
+        int toursTempete = 0;
+
         while (!fini) {
+
+            if (!tempete && randomNumbers.nextInt(10) == 0) { 
+                tempete = true;
+                toursTempete = randomNumbers.nextInt(3) + 2; 
+                System.out.println("⚡ Une tempête de sable se lève ! Elle durera environ " + toursTempete + " tours !");
+            }
+
+            if (tempete) {
+                System.out.println("🌪️ La tempête fait rage ! Vos déplacements sont réduits !");
+                toursTempete--;
+                if (toursTempete <= 0) {
+                    tempete = false;
+                    System.out.println("🌤️ La tempête s'est calmée !");
+                }
+            }
+
             System.out.println("O P T I O N S :");
             System.out.println("1. Boire");
             System.out.println("2. Avancer normalement");
@@ -56,6 +75,7 @@ public class NomDuProgramme {
 
                 case 2:
                     int distNorm = randomNumbers.nextInt(KM_NORM_MAX - KM_NORM_MIN + 1) + KM_NORM_MIN;
+                    if (tempete) distNorm /= 2; 
                     kmVoyageur += distNorm;
                     fatigue++;
                     soif++;
@@ -64,12 +84,12 @@ public class NomDuProgramme {
 
                 case 3:
                     int distRap = randomNumbers.nextInt(KM_RAP_MAX - KM_RAP_MIN + 1) + KM_RAP_MIN;
+                    if (tempete) distRap /= 2; 
                     kmVoyageur += distRap;
                     fatigue += 2;
                     soif++;
                     System.out.println("Vous avancez à toute vitesse de " + distRap + " km !");
                     break;
-
 
                 case 4:
                     fatigue = 0;
@@ -79,14 +99,10 @@ public class NomDuProgramme {
                 case 5:
                     int chance = randomNumbers.nextInt(DIF_AIDE);
                     if (chance == 0) {
-                        System.out.println("Vous trouvez un camp de nomades");
+                        System.out.println("Vous trouvez un camp de nomades !");
                         int ajout = randomNumbers.nextInt(3 + 1); 
                         gourde += ajout;
-                        
-                        if (gourde > GOURDE_PLEINE) {
-                            gourde = GOURDE_PLEINE;
-                        }  
-                        
+                        if (gourde > GOURDE_PLEINE) gourde = GOURDE_PLEINE;
                     } else {
                         System.out.println("Aucune aide trouvée...");
                     }
@@ -102,8 +118,7 @@ public class NomDuProgramme {
                     break;
             }
 
-            
-            int randomNatif = randomNumbers.nextInt(AVANCE_NATIFS); 
+            int randomNatif = randomNumbers.nextInt(3); 
             switch (randomNatif) {
                 case 0:
                     kmNatifs += randomNumbers.nextInt(KM_RAP_MAX - KM_RAP_MIN + 1) + KM_RAP_MIN;
@@ -112,17 +127,13 @@ public class NomDuProgramme {
                     kmNatifs += randomNumbers.nextInt(KM_NORM_MAX - KM_NORM_MIN + 1) + KM_NORM_MIN;
                     break;
                 case 2:
-                case 3:
-                case 4:
-                case 5:
+                    
                     break;
             }
 
- 
-
             if (soif >= MORT_SOIF) {
-            System.out.println("Vous êtes mort(e) de soif !");
-            fini = true;
+                System.out.println("Vous êtes mort(e) de soif !");
+                fini = true;
             }
 
             if (fatigue >= MORT_FATIGUE) {
@@ -141,24 +152,6 @@ public class NomDuProgramme {
             }
 
             if (!fini) {
-                if (soif == 0){
-                    System.out.println("Vous n'avez pas soif.");
-                }else if (soif == 1){
-                    System.out.println("Vous avez un peu soif.");
-                }else if (soif == 2){
-                    System.out.println("Vous avez beaucoup soif !");
-                }else if (soif == 3){
-                    System.out.println("Vous allez mourir de soif !!");
-                }
-                if (fatigue == 0){
-                    System.out.println("Le chameau est en bonne forme.");
-                }else if (fatigue == 1){
-                    System.out.println("Le chameau est un peu fatigué.");
-                }else if (fatigue == 2){
-                    System.out.println("Le chameau est très fatigué !");
-                }else if (fatigue == 3){
-                    System.out.println("Le chameau va mourir de fatigue !!");
-                }
                 System.out.println("État :");
                 System.out.println("Distance parcourue : " + kmVoyageur + " km");
                 System.out.println("Distance des natifs : " + (kmVoyageur - kmNatifs) + " km derrière");
@@ -166,9 +159,10 @@ public class NomDuProgramme {
                 System.out.println("Fatigue : " + fatigue);
                 System.out.println("Gourde : " + gourde);
             }
-
         }
 
+
+        
         System.out.println("Fin de la partie !");
         System.out.println("Voulez vous rejouer ? (1 pour rejouer, 0 pour arreter) ");
         j = in.nextInt();

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1400" viewBox="0 0 1200 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Student Travel — logo</title>
+  <desc id="desc">Logo moderne pour une entreprise qui propose des voyages étudiants à petit prix : icône carré arrondie avec globe coloré et avion, texte en dessous.</desc>
+
+  <defs>
+    <!-- Background rounded square gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B57A4"/>
+      <stop offset="1" stop-color="#0A3E7A"/>
+    </linearGradient>
+
+    <!-- Globe multi-color gradient -->
+    <linearGradient id="globeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8A65"/>
+      <stop offset="0.45" stop-color="#FF5D9E"/>
+      <stop offset="0.7" stop-color="#2EC4B6"/>
+      <stop offset="1" stop-color="#2A9DF4"/>
+    </linearGradient>
+
+    <!-- Soft shadow for depth -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+
+    <!-- Rounded mask to crop internal globe to the corner nicely -->
+    <clipPath id="iconClip">
+      <rect x="150" y="120" rx="140" ry="140" width="900" height="900"/>
+    </clipPath>
+
+    <!-- Airplane shape as path (single silhouette) -->
+    <symbol id="airplane">
+      <path d="M58.5 8.2c1.2-1.1 3.1-1 4.2.2l17.9 19.6c.6.6.8 1.4.6 2.2l-6.2 22.5c-.3 1.1.7 2.1 1.8 1.8l23.2-6.6c.8-.2 1.6 0 2.2.6l19.6 17.9c1.2 1.1 1.3 3 .2 4.2L109 95.1c-1.1 1.2-2.8 1.6-4.3 1l-36.5-14.5L26.3 98.7c-.6 1-1.8 1.5-2.9 1.3L8.5 98c-1.9-.4-2.5-2.9-1.1-4.3l20.4-20.4L6.6 58.9C4.9 57.2 4.9 54.4 6.6 52.7L58.5 8.2z"
+            transform="scale(1.6) translate(-10,-8)"/>
+    </symbol>
+
+    <!-- Font fallback handled by system; choose a clean geometric -->
+    <style type="text/css"><![CDATA[
+      .brand { font-family: "Montserrat", "Poppins", Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 2px; }
+    ]]></style>
+  </defs>
+
+  <!-- canvas background (optional for display) -->
+  <rect width="1200" height="1400" fill="#fffefb"/>
+
+  <!-- Icon rounded square -->
+  <g transform="translate(0,40)">
+    <rect x="150" y="120" rx="140" ry="140" width="900" height="900" fill="url(#bgGrad)"/>
+
+    <!-- Globe in bottom-left of icon -->
+    <g clip-path="url(#iconClip)">
+      <g transform="translate(300,360) scale(1)">
+        <!-- globe circle -->
+        <circle cx="200" cy="200" r="200" fill="url(#globeGrad)" filter="url(#softShadow)"/>
+
+        <!-- stylized latitude/longitude arcs (vector shapes) -->
+        <path d="M60 200c25-120 240-175 320-100" stroke="#FFB26B" stroke-width="18" fill="none" stroke-linecap="round"/>
+        <path d="M40 260c65-70 240-90 320-40" stroke="#FFD07A" stroke-width="18" fill="none" stroke-linecap="round"/>
+        <path d="M60 140c60 30 140 20 270 10" stroke="#FF5476" stroke-width="18" fill="none" stroke-linecap="round"/>
+        <path d="M120 60c40 70 40 200-10 270" stroke="#0FB7A0" stroke-width="18" fill="none" stroke-linecap="round"/>
+        <path d="M300 20c-20 20-30 80-30 140" stroke="#1C84D6" stroke-width="18" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- airplane (white) flying top-right inside the rounded square -->
+      <g transform="translate(560,160) scale(1.5) rotate(12)">
+        <use href="#airplane" fill="#FFFFFF" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Brand name under the icon -->
+  <g transform="translate(0,1060)">
+    <text x="600" y="0" text-anchor="middle" font-size="92" class="brand" fill="#0B3A6A">STUDENT</text>
+    <text x="600" y="120" text-anchor="middle" font-size="92" class="brand" fill="#0B3A6A">TRAVEL</text>
+    <!-- tagline (optionnel) -->
+    <text x="600" y="200" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#4b6b89">Voyage étudiant à petit prix</text>
+  </g>
+
+  <!-- small square icon-only version at bottom-left (useful as favicon or app icon) -->
+  <g transform="translate(40,1160) scale(0.5)">
+    <rect x="0" y="0" width="240" height="240" rx="36" fill="url(#bgGrad)"/>
+    <g transform="translate(36,36) scale(0.6)">
+      <circle cx="84" cy="84" r="84" fill="url(#globeGrad)"/>
+      <path d="M20 84c12-58 116-84 154-48" stroke="#FFB26B" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M8 112c28-32 116-40 154-18" stroke="#FF5476" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <g transform="translate(160,20) rotate(12) scale(0.36)">
+        <use href="#airplane" fill="#FFF"/>
+      </g>
+    </g>
+  </g>
+</svg>

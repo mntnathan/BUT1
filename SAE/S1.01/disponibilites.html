@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+<meta charset='UTF-8'>
+<title>Disponibilités</title>
+<style>
+table, th, td { border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: center; }
+.Disponible { background-color: #90EE90; }
+.Indisponible { background-color: #FF7F7F; }
+.Si_necessaire { background-color: #FFD700; }
+nav { background-color: #eee; padding: 10px; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<nav>
+<a href='#formulaire'>Formulaire</a> | 
+<a href='#tableau'>Tableau des disponibilités</a>
+</nav>
+<h1 id='formulaire'>Saisie des disponibilités</h1>
+<p>Paramètres utilisés :</p>
+<ul>
+<li>Nombre de jours : 2</li>
+<li>Heure début : 8</li>
+<li>Heure fin : 10</li>
+<li>Durée d'un créneau : 30 minutes</li>
+</ul>
+<h2 id='tableau'>Tableau des disponibilités</h2>
+<table>
+<tr><th>Heure / Jour</th>
+<th>Jour 1</th>
+<th>Jour 2</th>
+</tr>
+<tr><td>08:00</td>
+<td class='Indisponible'>Indisponible</td>
+<td class='Indisponible'>Indisponible</td>
+</tr>
+<tr><td>08:30</td>
+<td class='Si_nécessaire'>Si nécessaire</td>
+<td class='Si_nécessaire'>Si nécessaire</td>
+</tr>
+<tr><td>09:00</td>
+<td class='Disponible'>Disponible</td>
+<td class='Disponible'>Disponible</td>
+</tr>
+<tr><td>09:30</td>
+<td class='Indisponible'>Indisponible</td>
+<td class='Disponible'>Disponible</td>
+</tr>
+</table>
+</body>
+</html>
