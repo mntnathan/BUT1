@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+. gsh_gettext.sh
+
+GSH_VERSION='developpment version'
+
+echo "Gameshell $GSH_VERSION"
+
+echo
+
+echo $(gettext "The latest version of Gameshell is available at")
+echo "    https://github.com/phyver/GameShell"
