@@ -1,0 +1,104 @@
+.flex-container{
+    display: flex;
+    background-color: aqua;
+    flex-wrap: wrap;
+    height: 500px;
+    justify-content: center;
+}
+
+.flex-item{
+    margin: 10px; 
+    padding: 20px;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+
+.a1{
+    background-color: lightcoral;
+    width: 100%; 
+}
+
+.a2, .a3 {
+    background-color: rgb(253, 0, 0);
+    width: 48%; 
+}
+
+.a4, .a5, .a6 {
+    background-color: rgb(255, 136, 0);
+    width: 30%; 
+}
+
+.flex-container2{
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: repeat(5, 1fr) ;
+    background-color: lightgreen;
+    height: 800px;
+    width: 100%;
+}
+
+
+
+.b1 {
+    background-color: yellow;
+    grid-row: 1;
+    grid-column: 1;
+
+}
+
+.b2 {
+    background-color: orange;
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.b3 {
+    background-color: pink;
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.b4 {
+    background-color: violet;
+    grid-row: 4;
+    grid-column: 4;
+}
+
+.b5 {
+    background-color: lightblue;
+    grid-row: 5;
+    grid-column: 5;
+}
+
+.flex-container3{
+    display: flex; 
+    gap: 10px;
+    background-color: lightgray;
+    height: 600px;
+    width: 100%;
+}
+
+.flex-container3 .flex-item{
+    flex-grow: 1; 
+    background-color: lightpink;
+    text-align: center;
+    line-height: 600px; 
+}
+
+.c1{
+    order: 5;
+}
+
+.flex-container4{
+    display: flex; 
+    gap: 10px;
+    background-color: lightyellow;
+    height: 600px;
+    width: 100%;
+}
+
+.d1{
+    background-color: lightseagreen;
+    flex-basis: 200px; 
+    flex-grow: 2;
+}

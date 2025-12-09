@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Couleur de fond du site (Crème Chaud) */
+    background-color: #fdfaf6;
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    
+    background-attachment: fixed;
+}
+
+/* --- Styles pour les Images de Décoration en Arrière-plan --- */
+.background-decor {
+    position: absolute;
+    /* Assure que les cœurs restent derrière tout le contenu de la page */
+    z-index: -10; 
+}
+
+header {
+    background: linear-gradient(135deg, #8c4a63, #a45a79);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+.screen {
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* --- Styles spécifiques à la page d'accueil --- */
+
+.welcome-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    color: #8c4a63;
+    margin: 10px 0 10px 0;
+    font-weight: 700;
+}
+
+.welcome-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    color: #5a5a5a;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #8c4a63;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.level-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-level {
+    padding: 15px;
+    font-size: 1.2em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-level:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.easy { background-color: #b09ab3; }
+.medium { background-color: #e0a09a; }
+.hard { background-color: #8c4a63; }
+
+.btn-back {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 2px solid #8c4a63;
+    background-color: transparent;
+    color: #8c4a63;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #8c4a63;
+    color: white;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+#puzzle-grid {
+    display: grid;
+    border: 5px solid #8c4a63;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin: 0; 
+}
+
+.tile {
+    background-repeat: no-repeat;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; 
+    flex-shrink: 0;
+}
+
+#puzzle-grid.disabled-for-hint {
+    opacity: 0.5; 
+    cursor: not-allowed; 
+}
+
+.border-default {
+    border: 1px solid #ccc; 
+}
+
+.border-top-locked {
+    border-top: 3px solid #c9a764 !important;
+}
+
+.border-bottom-locked {
+    border-bottom: 3px solid #c9a764 !important;
+}
+
+.border-left-locked {
+    border-left: 3px solid #c9a764 !important;
+}
+
+.border-right-locked {
+    border-right: 3px solid #c9a764 !important;
+}
+
+.locked-tile {
+    border: none !important;
+    cursor: default !important;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #fdfaf6;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.sidebar h3, .sidebar h4 {
+    font-family: 'Playfair Display', serif;
+    color: #8c4a63;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.sidebar p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.btn-help {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 700;
+    background-color: #c9a764;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-help:hover {
+    background-color: #b3924b;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.hint-image-container {
+    margin-top: 15px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 100%; 
+    box-sizing: border-box; 
+}
+
+#hint-image {
+    width: 100%; 
+    height: auto; 
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none !important;
+}

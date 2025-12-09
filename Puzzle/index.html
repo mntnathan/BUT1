@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Puzzle Élégant</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <img src="images/coeurs.svg" alt="Coeur Neon décoratif" class="background-decor" style="width: 150px; top: 10%; left: 5%; opacity: 0.7;">
+    <img src="images/coeurs.svg" alt="Coeur Neon décoratif" class="background-decor" style="width: 80px; top: 60%; right: 15%; opacity: 0.5;">
+    <img src="images/coeurs.svg" alt="Coeur Neon décoratif" class="background-decor" style="width: 120px; bottom: 5%; left: 30%; opacity: 0.6;">
+    <img src="images/coeurs.svg" alt="Coeur Neon décoratif" class="background-decor" style="width: 60px; top: 25%; right: 5%; opacity: 0.4;">
+    <header>
+        <h1>Jeu de Puzzle 🧩</h1>
+    </header>
+
+    <div id="level-selector" class="screen active">
+        
+        <h3 class="welcome-title">Bienvenue sur Puzzler</h3>
+        <p class="welcome-subtitle">
+            Le jeu de puzzle classique où vous reconstituez l'image pièce par pièce.
+            <br>Choisissez votre défi pour commencer.
+        </p>
+        
+        <h2>Sélectionnez un Niveau</h2>
+        <div class="level-buttons">
+            <button onclick="initGame(10, 'images/images1.jpg', 'Facile')" class="btn-level easy">
+                Niveau 1 (10x10 - 100 pièces)
+            </button>
+            <button onclick="initGame(16, 'images/images2.jpg', 'Moyen')" class="btn-level medium">
+                Niveau 2 (16x16 - 256 pièces)
+            </button>
+            <button onclick="initGame(20, 'images/images3.jpg', 'Difficile')" class="btn-level hard">
+                Niveau 3 (20x20 - 400 pièces)
+            </button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <h2 id="current-difficulty"></h2>
+        
+        <div class="game-container">
+            
+            <div id="puzzle-grid">
+            </div>
+            
+            <div class="sidebar">
+                <h3>Règles du Jeu</h3>
+                <p><strong>But :</strong> Reconstituer l'image complète.</p>
+                <p><strong>Mouvement :</strong> Cliquez sur une première pièce (bordure or) puis sur une seconde pièce pour échanger leurs positions.</p>
+                <p><strong>Progression :</strong> Les pièces correctement placées se verrouillent et s'entourent d'un contour or antique. Elles ne peuvent plus être déplacées.</p>
+                
+                <hr>
+                
+                <button id="help-button" onclick="toggleHint()" class="btn-help">
+                    Afficher l'Image d'Aide
+                </button>
+                
+                <div id="hint-image-container" class="hint-image-container hidden">
+                    <h4>Image Complète (Astuce)</h4>
+                    <img id="hint-image" src="" alt="Image complète du puzzle">
+                </div>
+                
+                <hr>
+                
+                <button onclick="showSelector()" class="btn-back">Retour au Menu</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
